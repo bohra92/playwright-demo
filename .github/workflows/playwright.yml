@@ -16,7 +16,7 @@ jobs:
       if: always()
     - run: docker build -t playwright_demo .    
     - run: docker run -it -d --name demoContainer playwright_demo /bin/bash
-    - run: sudo docker cp demoContainer:./tests/allure-results allure-results
+    - run: sudo docker cp demoContainer:./e2e/allure-results allure-results
     - uses: actions/upload-artifact@master
       with:
           name: allure-results
