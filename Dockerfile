@@ -20,7 +20,13 @@ RUN mkdir /e2e
 COPY . /e2e
 WORKDIR /e2e
 
+
+RUN npm install
+
+
 RUN npx -y playwright@1.41.1 install --with-deps
+
+RUN npm install
 
 #copy project (including tests)
 # Run playwright test
